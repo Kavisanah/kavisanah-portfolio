@@ -12,7 +12,7 @@ export default function Projects() {
       tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Groq API", "Tailwind CSS"],
       github: "https://github.com/kavisanah/ai-interview-coach",
       live: "https://ai-interview-coach-app-pi.vercel.app/",
-      image: "/ai-interview-coach.png"
+      image: "./ai-interview-coach.png"
     },
     {
       id: "mediremind",
@@ -23,7 +23,7 @@ export default function Projects() {
       tech: ["React.js", "Tailwind CSS", "Spring Boot", "MySQL", "JWT", "Docker"],
       github: "https://github.com/kavisanah/mediremind",
       live: null,
-      image: "/mediremind.png"
+      image: "./mediremind.png"
     },
     {
       id: "bookfair",
@@ -34,7 +34,7 @@ export default function Projects() {
       tech: ["React.js", "Spring Boot", "Tailwind CSS", "Framer Motion", "MySQL"],
       github: "https://github.com/Sathiyabalan29/BookFair.git",
       live: null,
-      image: "/bookfair.png"
+      image: "./bookfair.png"
     }
   ];
 
