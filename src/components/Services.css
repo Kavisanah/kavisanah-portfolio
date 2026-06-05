@@ -1,0 +1,114 @@
+/* ==========================================
+   SERVICES SECTION STYLES
+   ========================================== */
+
+.services-section {
+  position: relative;
+}
+
+.services-grid {
+  gap: 2.5rem;
+}
+
+.service-card-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem !important;
+  border-radius: 24px;
+  height: 100%;
+  transition: var(--transition-normal);
+}
+
+.service-card-panel:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-hover);
+  box-shadow: 0 20px 40px -15px rgba(2, 12, 27, 0.4),
+              0 0 30px var(--soft-glow);
+}
+
+.light-mode .service-card-panel:hover {
+  box-shadow: 0 20px 35px -15px rgba(30, 58, 95, 0.08),
+              0 0 25px var(--soft-glow);
+}
+
+.service-icon-box {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 16px;
+  background: rgba(100, 255, 218, 0.06);
+  border: 1px solid rgba(100, 255, 218, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-mint);
+  margin-bottom: 2rem;
+  transition: var(--transition-normal);
+  box-shadow: var(--card-shadow);
+}
+
+.light-mode .service-icon-box {
+  background: rgba(255, 127, 80, 0.06);
+  border-color: rgba(255, 127, 80, 0.15);
+  color: var(--primary-coral);
+}
+
+.service-card-panel:hover .service-icon-box {
+  background: var(--gradient-tech);
+  color: #ffffff;
+  border-color: transparent;
+  transform: scale(1.08) rotate(8deg);
+  box-shadow: 0 0 15px var(--soft-glow);
+}
+
+.service-svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.service-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.service-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* ==========================================
+   SERVICES RESPONSIVE OVERRIDES
+   ========================================== */
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .service-card-panel {
+    padding: 2rem !important;
+  }
+  .service-icon-box {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  .service-svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  .service-card-title {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,251 @@
+/* ==========================================
+   APP SHELL, FLOATING BLOBS & GLOBAL BACKGROUNDS
+   ========================================== */
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+/* Premium Floating Backdrop Blobs */
+.ambient-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -3;
+  pointer-events: none;
+  opacity: 0.28;
+  transition: opacity 0.5s var(--transition-bezier), filter 0.5s var(--transition-bezier);
+}
+
+.light-mode .ambient-blob {
+  opacity: 0.16;
+  filter: blur(120px);
+}
+
+.blob-1 {
+  top: -10%;
+  left: -10%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, #FF7F50 0%, rgba(255, 127, 80, 0.05) 70%, transparent 100%);
+}
+
+.blob-2 {
+  top: 35%;
+  right: -15%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, #64FFDA 0%, rgba(100, 255, 218, 0.05) 70%, transparent 100%);
+}
+
+.blob-3 {
+  bottom: -15%;
+  left: 15%;
+  width: 35vw;
+  height: 35vw;
+  background: radial-gradient(circle, #FF9A76 0%, rgba(255, 154, 118, 0.05) 70%, transparent 100%);
+}
+
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* ==========================================
+   PREMIUM FOOTER SECTION STYLES
+   ========================================== */
+
+.footer-section {
+  background: rgba(28, 24, 39, 0.4);
+  border-top: 1px solid var(--border-color);
+  padding: 4rem 0 2.5rem 0;
+  margin-top: 3.5rem;
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.light-mode .footer-section {
+  background: rgba(248, 244, 255, 0.65);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.65rem;
+  color: var(--text-primary);
+}
+
+.footer-brand .logo-icon {
+  background: var(--gradient-tech);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: monospace;
+}
+
+.footer-brand .dot {
+  background: var(--gradient-tech);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.copyright-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.social-link {
+  color: var(--text-secondary);
+  font-weight: 600;
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.social-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--gradient-tech);
+  transition: var(--transition-fast);
+}
+
+.social-link:hover {
+  color: var(--primary-lavender);
+}
+
+.social-link:hover::after {
+  width: 100%;
+}
+
+.separator {
+  color: var(--border-hover);
+  user-select: none;
+  font-size: 0.75rem;
+}
+
+/* ==========================================
+   FLOATING SCROLL-TO-TOP BUTTON
+   ========================================== */
+
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-lavender);
+  cursor: pointer;
+  z-index: 999;
+  border: 1px solid var(--border-color);
+  background: var(--panel-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--card-shadow);
+  opacity: 0;
+  transform: translateY(15px) scale(0.9);
+  pointer-events: none;
+  transition: var(--transition-normal);
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.scroll-to-top-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: var(--primary-lavender);
+  color: var(--hover-pink);
+  box-shadow: 0 10px 25px rgba(183, 148, 244, 0.3),
+              0 0 15px var(--soft-glow);
+}
+
+.scroll-arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.25s var(--transition-bezier);
+}
+
+.scroll-to-top-btn:hover .scroll-arrow-icon {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+  
+  .scroll-to-top-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}

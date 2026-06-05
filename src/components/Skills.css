@@ -1,0 +1,136 @@
+/* ==========================================
+   TECHNOLOGY BADGES & PILLS LAYOUT (Devicons)
+   ========================================== */
+
+.skills-categories-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.skills-category-card {
+  padding: 2.25rem !important;
+  border-radius: 24px;
+  height: 100%;
+}
+
+.skills-category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 15px 35px -10px rgba(255, 127, 80, 0.08),
+              0 0 25px var(--soft-glow);
+}
+
+.skills-category-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+  border-bottom: 1.5px solid var(--border-color);
+  padding-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+/* Flex wrapping of skill badges */
+.skills-badges-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* Dark, sleek badge pill styling */
+.skill-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1.15rem;
+  background: rgba(10, 25, 47, 0.35); /* Deep dark background */
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: var(--transition-normal);
+  cursor: default;
+  box-shadow: var(--card-shadow);
+}
+
+.light-mode .skill-badge-pill {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.skill-badge-pill:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-coral); /* Coral Orange hover */
+  background: rgba(255, 127, 80, 0.04);
+  box-shadow: 0 8px 20px rgba(255, 127, 80, 0.12),
+              0 0 12px var(--soft-glow);
+}
+
+.light-mode .skill-badge-pill:hover {
+  background: rgba(255, 127, 80, 0.08);
+}
+
+/* Icon Box sizing and graphics containment */
+.skill-badge-icon-box {
+  width: 1.45rem;
+  height: 1.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skill-devicon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.skill-custom-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--accent-mint);
+}
+
+.light-mode .skill-custom-svg {
+  color: var(--primary-coral);
+}
+
+.skill-badge-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================
+   SKILLS RESPONSIVE OVERRIDES
+   ========================================== */
+
+@media (max-width: 992px) {
+  .skills-categories-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-category-card {
+    padding: 1.75rem !important;
+  }
+  .skills-badges-flex {
+    gap: 0.6rem;
+  }
+  .skill-badge-pill {
+    padding: 0.5rem 0.95rem;
+  }
+  .skill-badge-icon-box {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .skill-badge-name {
+    font-size: 0.85rem;
+  }
+}
+
+
