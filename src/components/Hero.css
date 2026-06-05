@@ -355,8 +355,10 @@
   
   .hero-container {
     gap: 3rem;
-    display: flex;
-    flex-direction: column-reverse;
+  }
+  
+  .hero-visual {
+    order: -1;
   }
   
   .hero-content {

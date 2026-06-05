@@ -33,8 +33,8 @@ export default function Hero() {
           {/* Action Buttons */}
           <div className="btn-box">
             <a 
-              href={`${import.meta.env.BASE_URL}resume.pdf`} 
-              download="Kavisanah_Kanakeshwaran_CV.pdf"
+              href={`${import.meta.env.BASE_URL}Kavisanah_SoftwareEngineering_CV.pdf`} 
+              download="Kavisanah_SoftwareEngineering_CV.pdf"
               className="btn btn-cv btn-download"
               title="Download Resume PDF"
             >
