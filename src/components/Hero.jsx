@@ -33,7 +33,7 @@ export default function Hero() {
           {/* Action Buttons */}
           <div className="btn-box">
             <a 
-              href="./resume.pdf" 
+              href={`${import.meta.env.BASE_URL}resume.pdf`} 
               download="Kavisanah_Kanakeshwaran_CV.pdf"
               className="btn btn-cv btn-download"
               title="Download Resume PDF"
@@ -98,7 +98,7 @@ export default function Hero() {
             <div className="img-box glass-panel">
               {!imgError ? (
                 <img 
-                  src="./kavisanah.png" 
+                  src={`${import.meta.env.BASE_URL}kavisanah.png`} 
                   alt="Kavisanah Kanakeshwaran"
                   onError={() => setImgError(true)}
                   className="profile-pic"
