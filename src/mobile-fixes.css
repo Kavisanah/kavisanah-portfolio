@@ -55,19 +55,22 @@
   }
 
   .btn-box {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
     gap: 0.75rem;
+    width: 100%;
   }
 
   .btn-download,
   .btn-projects-link,
   .btn-cv {
-    width: 100%;
+    width: auto;
+    flex: 1;
+    max-width: 160px;
     text-align: center;
     justify-content: center;
-    padding: 0.75rem 1.25rem;
-    font-size: 0.88rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.82rem;
   }
 
   .home-image-wrapper {
@@ -188,14 +191,19 @@
   }
 
   .project-links {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.6rem;
+    width: 100%;
   }
 
   .btn-sm {
-    width: 100%;
+    width: auto;
+    flex: 1;
+    max-width: 150px;
     text-align: center;
     justify-content: center;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
   }
 
   .project-tech-tags .pill {

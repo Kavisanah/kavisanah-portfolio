@@ -33,7 +33,7 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScrollVisibility);
   }, []);
 
-  // Intersection Observer for scroll reveal animations
+  // Intersection Observer for scroll reveal animations (handles lazy-loaded elements dynamically)
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -50,12 +50,22 @@ export default function App() {
       });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.scroll-scale');
-    revealElements.forEach((el) => observer.observe(el));
+    const registerElements = () => {
+      const revealElements = document.querySelectorAll('.scroll-scale:not(.revealed)');
+      revealElements.forEach((el) => observer.observe(el));
+    };
 
-    // Cleanup observer on unmount
+    registerElements();
+
+    const mutationObserver = new MutationObserver(() => {
+      registerElements();
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
     return () => {
-      revealElements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, []);
 
