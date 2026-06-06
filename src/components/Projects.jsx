@@ -32,7 +32,7 @@ export default function Projects() {
       date: "Oct 2025 – Jan 2026",
       desc: "A digitized real-time booking platform with interactive stall map selections, refund capabilities, and QR-code entry check-ins.",
       tech: ["React.js", "Spring Boot", "Tailwind CSS", "Framer Motion", "MySQL"],
-      github: "https://github.com/Sathiyabalan29/BookFair.git",
+      github: "https://github.com/Sathiyabalan29/BookFair",
       live: null,
       image: `${import.meta.env.BASE_URL}bookfair.png`
     }
@@ -61,6 +61,7 @@ export default function Projects() {
                   <img 
                     src={project.image} 
                     alt={project.title} 
+                    loading="lazy"
                     className="project-image-preview" 
                   />
                 ) : (

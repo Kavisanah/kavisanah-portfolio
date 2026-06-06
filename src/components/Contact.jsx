@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Contact.css';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', address: '', phone: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', phone: '', message: '' });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -15,7 +15,7 @@ export default function Contact() {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       tempErrors.email = "Email address is invalid";
     }
-    if (!formData.address.trim()) tempErrors.address = "Address is required";
+    if (!formData.company.trim()) tempErrors.company = "Company / Organisation is required";
     if (!formData.phone.trim()) {
       tempErrors.phone = "Phone number is required";
     }
@@ -40,7 +40,10 @@ export default function Contact() {
       setIsSubmitting(true);
       try {
         const payload = {
-          access_key: "1153d564-0587-4271-984a-eb28731f957e",
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          botcheck: '',
+          subject: 'New Portfolio Contact from ' + formData.name,
+          from_name: 'Kavisanah Portfolio',
           ...formData
         };
 
@@ -56,7 +59,7 @@ export default function Contact() {
         const result = await response.json();
         if (result.success) {
           setIsSubmitted(true);
-          setFormData({ name: '', email: '', address: '', phone: '', message: '' });
+          setFormData({ name: '', email: '', company: '', phone: '', message: '' });
           // Auto-hide success message after 5 seconds
           setTimeout(() => {
             setIsSubmitted(false);
@@ -173,6 +176,7 @@ export default function Contact() {
                       type="email" 
                       id="email"
                       name="email" 
+                      inputMode="email"
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@example.com"
@@ -181,28 +185,29 @@ export default function Contact() {
                     {errors.email && <span className="field-error">{errors.email}</span>}
                   </div>
 
-                  {/* Address field */}
+                  {/* Company/Organisation field */}
                   <div className="form-group">
-                    <label htmlFor="address" className="form-label">Address</label>
+                    <label htmlFor="company" className="form-label">Company / Organisation</label>
                     <input 
                       type="text" 
-                      id="address"
-                      name="address" 
-                      value={formData.address}
+                      id="company"
+                      name="company" 
+                      value={formData.company}
                       onChange={handleChange}
-                      placeholder="Your address"
-                      className={`form-input ${errors.address ? 'invalid' : ''}`}
+                      placeholder="Your company or organisation"
+                      className={`form-input ${errors.company ? 'invalid' : ''}`}
                     />
-                    {errors.address && <span className="field-error">{errors.address}</span>}
+                    {errors.company && <span className="field-error">{errors.company}</span>}
                   </div>
 
                   {/* Phone field */}
                   <div className="form-group">
                     <label htmlFor="phone" className="form-label">Phone Number</label>
                     <input 
-                      type="text" 
+                      type="tel" 
                       id="phone"
                       name="phone" 
+                      inputMode="tel"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Your phone number"

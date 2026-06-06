@@ -1,0 +1,337 @@
+/* ==========================================
+   MOBILE RESPONSIVE FIXES
+   Add this file as: src/mobile-fixes.css
+   Then import it in src/main.jsx:
+   import './mobile-fixes.css';
+   ========================================== */
+
+/* ==========================================
+   SMALL MOBILE (max 480px)
+   ========================================== */
+@media (max-width: 480px) {
+
+  /* --- GLOBAL --- */
+  .container {
+    padding: 0 1.1rem;
+  }
+
+  .section {
+    padding: 4rem 0 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem !important;
+    line-height: 1.2;
+  }
+
+  .section-desc {
+    font-size: 0.9rem;
+  }
+
+  /* --- HERO --- */
+  .hero-section {
+    padding-top: 5.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-name {
+    font-size: 2.2rem !important;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title,
+  .change-text {
+    font-size: 1.25rem !important;
+  }
+
+  .hero-pitch {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .btn-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btn-download,
+  .btn-projects-link,
+  .btn-cv {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.88rem;
+  }
+
+  .home-image-wrapper {
+    max-width: 260px !important;
+    height: 260px !important;
+    margin: 0 auto;
+  }
+
+  .img-box {
+    width: 185px !important;
+    height: 185px !important;
+  }
+
+  .hero-quote-bar {
+    min-width: 220px !important;
+    max-width: 280px !important;
+    padding: 0.6rem 1rem !important;
+  }
+
+  .quote-text {
+    font-size: 0.72rem !important;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* --- ABOUT --- */
+  .about-main-title {
+    font-size: 2rem !important;
+    text-align: center;
+  }
+
+  .about-sub-heading {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .about-narrative-paragraph {
+    font-size: 0.92rem;
+    text-align: center;
+  }
+
+  .about-profile-card,
+  .about-bio-card {
+    padding: 1.35rem !important;
+  }
+
+  .profile-image-container {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  .profile-name {
+    font-size: 1.2rem;
+  }
+
+  .profile-detail-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    text-align: center;
+  }
+
+  .detail-value {
+    text-align: center;
+  }
+
+  .timeline-card {
+    padding: 1.35rem !important;
+  }
+
+  .timeline-card-inst {
+    font-size: 1.1rem;
+  }
+
+  .timeline-header-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* --- SKILLS --- */
+  .skills-category-card {
+    padding: 1.35rem !important;
+  }
+
+  .skill-badge-pill {
+    padding: 0.45rem 0.8rem;
+  }
+
+  .skill-badge-name {
+    font-size: 0.8rem;
+  }
+
+  .skill-badge-icon-box {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  /* --- PROJECTS --- */
+  .project-card {
+    padding: 1.25rem !important;
+    gap: 1rem;
+  }
+
+  .project-preview-side {
+    height: 150px;
+  }
+
+  .project-title {
+    font-size: 1.15rem !important;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .btn-sm {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .project-tech-tags .pill {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.55rem;
+  }
+
+  /* --- CONTACT --- */
+  .contact-form {
+    padding: 1.35rem !important;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .references-card {
+    padding: 1.25rem !important;
+  }
+
+  .info-item {
+    padding: 1.1rem 1.25rem !important;
+    gap: 1rem;
+  }
+
+  .info-value {
+    font-size: 0.9rem;
+  }
+
+  .ref-contacts {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* --- NAVBAR --- */
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+  }
+}
+
+/* ==========================================
+   TABLET (481px – 768px)
+   ========================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  /* --- HERO --- */
+  .hero-name {
+    font-size: 2.75rem !important;
+  }
+
+  .change-text,
+  .hero-title {
+    font-size: 1.55rem !important;
+  }
+
+  .btn-box {
+    justify-content: center;
+    gap: 0.85rem;
+  }
+
+  .home-image-wrapper {
+    max-width: 290px !important;
+    height: 290px !important;
+  }
+
+  .img-box {
+    width: 205px !important;
+    height: 205px !important;
+  }
+
+  /* --- PROJECTS --- */
+  .project-links {
+    flex-direction: row;
+  }
+
+  /* --- ABOUT --- */
+  .about-main-title {
+    font-size: 2.25rem !important;
+  }
+}
+
+/* ==========================================
+   PREVENT HORIZONTAL SCROLL EVERYWHERE
+   ========================================== */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  * {
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix any fixed-width elements that may overflow */
+  .hero-quote-bar {
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  /* Ensure grid never overflows */
+  .grid-2,
+  .grid-3,
+  .projects-list,
+  .skills-categories-wrapper,
+  .about-layout-grid {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+  }
+
+  /* Contact grid fix */
+  .contact-grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Section padding */
+  .section {
+    padding: 4.5rem 0 3.5rem 0;
+  }
+
+  /* Hero container stacking */
+  .hero-container {
+    flex-direction: column !important;
+    display: flex !important;
+    align-items: center;
+  }
+}

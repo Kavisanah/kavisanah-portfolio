@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Articles from './components/Articles';
-import Contact from './components/Contact';
-import Services from './components/Services';
 import './App.css';
+
+const About    = lazy(() => import('./components/About'));
+const Services = lazy(() => import('./components/Services'));
+const Skills   = lazy(() => import('./components/Skills'));
+const Projects = lazy(() => import('./components/Projects'));
+const Articles = lazy(() => import('./components/Articles'));
+const Contact  = lazy(() => import('./components/Contact'));
 
 export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -60,6 +61,7 @@ export default function App() {
 
   // Constellation particles & fluid glowing wave ribbons (generative video loop) background
   useEffect(() => {
+    if (window.innerWidth <= 768) return;
     const canvas = canvasNode;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -286,12 +288,14 @@ export default function App() {
       {/* Main Content Layout */}
       <main className="main-content">
         <Hero />
-        <About />
-        <Services />
-        <Skills />
-        <Projects />
-        <Articles />
-        <Contact />
+        <Suspense fallback={<div />}>
+          <About />
+          <Services />
+          <Skills />
+          <Projects />
+          <Articles />
+          <Contact />
+        </Suspense>
       </main>
 
       {/* Modern Developer Footer */}

@@ -79,6 +79,7 @@ export default function Skills() {
                           alt={skill.name} 
                           className="skill-devicon"
                           loading="lazy"
+                          onError={(e) => { e.target.style.display = 'none'; }}
                         />
                       ) : (
                         skill.customIcon

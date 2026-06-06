@@ -29,9 +29,19 @@ export default function Navbar() {
       }
     };
 
+    const handleClickOutside = (e) => {
+      if (mobileMenuOpen && !e.target.closest('.navbar')) {
+        setMobileMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   // Sync Dark/Light Mode state with root element class
   useEffect(() => {
