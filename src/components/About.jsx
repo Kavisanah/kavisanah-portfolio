@@ -38,7 +38,7 @@ export default function About() {
             <div className="profile-card-header">
               <div className="profile-image-container">
                 <img 
-                  src={`${import.meta.env.BASE_URL}kavisanah.png`} 
+                  src={`${import.meta.env.BASE_URL}about-profile.png`} 
                   alt="Kavisanah Kanakeshwaran"
                   loading="lazy"
                   className="profile-image-img"
